@@ -26,8 +26,22 @@ namespace FoodDeliveryAPI.Models
         {
             string firstHalf = email.Substring(0, email.Length / 2);
             string secondHalf = email.Substring(email.Length / 2);
+            string saltPassword=null;
+            for(int i = 0; i < password.Length; i++)
+            {
+                if(i==1)
+                {
+                    saltPassword += firstHalf;
+                }
+                if (i == 5)
+                {
+                    saltPassword += secondHalf;
+                }
 
-            return firstHalf+password+secondHalf;
+                saltPassword += password[i];
+            }
+
+            return saltPassword;
         }
 
     }
