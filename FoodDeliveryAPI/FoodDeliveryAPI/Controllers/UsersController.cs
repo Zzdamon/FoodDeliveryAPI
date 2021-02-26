@@ -101,6 +101,22 @@ namespace FoodDeliveryAPI.Controllers
             return users;
         }
 
+        //// DELETE: api/Users
+        //[HttpDelete()]
+        //public async Task<ActionResult<Users>> DeleteUsers()
+        //{
+        //    var users = await _context.Users.Al
+        //    if (users == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _context.Users.Remove(users);
+        //    await _context.SaveChangesAsync();
+
+        //    return users;
+        //}
+
         private bool UsersExists(int id)
         {
             return _context.Users.Any(e => e.userId == id);

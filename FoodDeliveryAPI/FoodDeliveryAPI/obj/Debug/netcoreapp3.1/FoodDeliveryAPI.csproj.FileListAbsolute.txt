@@ -139,7 +139,6 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.AssemblyInfoInputs.cache
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.AssemblyInfo.cs
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csproj.CoreCompileInputs.cache
