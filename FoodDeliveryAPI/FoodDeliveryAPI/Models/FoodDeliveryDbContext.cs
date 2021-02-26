@@ -22,6 +22,10 @@ namespace FoodDeliveryAPI.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Users>()
+            .HasIndex(u => u.email)
+            .IsUnique();
+
             builder.Entity<OrderItems>().HasKey(table => new { table.itemId, table.orderId });
         }
 
