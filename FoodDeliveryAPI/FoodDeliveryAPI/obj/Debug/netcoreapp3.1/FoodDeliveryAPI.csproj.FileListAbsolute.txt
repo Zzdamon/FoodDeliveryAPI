@@ -151,3 +151,4 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.pdb
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.genruntimeconfig.cache
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache

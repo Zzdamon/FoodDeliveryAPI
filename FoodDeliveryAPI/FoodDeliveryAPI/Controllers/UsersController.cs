@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FoodDeliveryAPI.Models;
+using System.Net.Http;
+using System.Net;
 
 namespace FoodDeliveryAPI.Controllers
 {
@@ -39,6 +41,28 @@ namespace FoodDeliveryAPI.Controllers
             }
 
             return users;
+        }
+
+        // GET: api/Users/auth
+        [HttpGet("auth/{email}/{password}") ]
+        public async Task<ActionResult<Users>> GetUsers(string email,string password)
+        {
+            var users = await _context.Users.Where(user => user.email == email)
+               .FirstOrDefaultAsync();
+
+            if (users == null)
+            {
+                return NotFound("User with the email "+email+"doesn't exist");
+            }
+
+            string hashPass = new HashPassword().hashPassword(password,users.email);
+            if (hashPass == users.Password)
+            {
+                return Ok(users);
+            }
+
+            return NotFound("incorect password");
+     
         }
 
         // PUT: api/Users/5
@@ -101,21 +125,21 @@ namespace FoodDeliveryAPI.Controllers
             return users;
         }
 
-        //// DELETE: api/Users
-        //[HttpDelete()]
-        //public async Task<ActionResult<Users>> DeleteUsers()
-        //{
-        //    var users = await _context.Users.Al
-        //    if (users == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // DELETE: api/Users
+        [HttpDelete()]
+        public async Task<ActionResult<IEnumerable<Users>>> DeleteUsers()
+        {
+            var users = await _context.Users.ToListAsync();
+            if (users == null)
+            {
+                return NotFound();
+            }
 
-        //    _context.Users.Remove(users);
-        //    await _context.SaveChangesAsync();
+            _context.Users.RemoveRange(users);
+            await _context.SaveChangesAsync();
 
-        //    return users;
-        //}
+            return users;
+        }
 
         private bool UsersExists(int id)
         {
