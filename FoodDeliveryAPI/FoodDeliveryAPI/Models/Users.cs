@@ -7,6 +7,32 @@ using System.Threading.Tasks;
 
 namespace FoodDeliveryAPI.Models
 {
+
+
+    //public enum Providers
+    //{
+    //    Google,
+    //    Facebook,
+    //    yEat
+    //}
+
+    //public Providers checkProvider(string value)
+    //{
+    //    if (value == "Google")
+    //    {
+    //        return Providers.Google;
+    //    }
+    //    else if (value == "Facebook")
+    //    {
+    //        return Providers.Facebook;
+    //    }
+    //    else if (value == "yEat")
+    //    {
+    //        return Providers.yEat;
+    //    }
+    //    else throw new Exception("Invalid provider");
+    //}
+
     public class Users
     {   [Key]
         public int userId { get; set; }
@@ -25,6 +51,7 @@ namespace FoodDeliveryAPI.Models
         [Required]
         [Column(TypeName = "nvarchar(100)")]
         public string email { get; set; }
+
         public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.email ); }
 
         [Required]

@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Users/auth
         [HttpGet("auth/{email}/{password}") ]
-        public async Task<ActionResult<Users>> GetUsers(string email,string password)
+        public async Task<ActionResult<Users>> GetUsers(string provider,string email,string password)
         {
             var users = await _context.Users.Where(user => user.email == email)
                .FirstOrDefaultAsync();

@@ -14,6 +14,9 @@ namespace FoodDeliveryAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string name { get; set; }
 
+        [Column(TypeName = "nvarchar(100)")]
+        public string description { get; set; }
+
         public float price { get; set; }
 
         [ForeignKey("Category")]

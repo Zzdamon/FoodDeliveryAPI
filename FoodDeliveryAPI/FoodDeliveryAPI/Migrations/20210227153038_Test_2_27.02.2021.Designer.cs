@@ -3,14 +3,16 @@ using FoodDeliveryAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodDeliveryAPI.Migrations
 {
     [DbContext(typeof(FoodDeliveryDbContext))]
-    partial class FoodDeliveryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210227153038_Test_2_27.02.2021")]
+    partial class Test_2_27022021
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,9 +50,6 @@ namespace FoodDeliveryAPI.Migrations
                     b.Property<int>("categId")
                         .HasColumnType("int");
 
-                    b.Property<string>("description")
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(100)");
 
@@ -85,9 +84,6 @@ namespace FoodDeliveryAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("deliveryAddress")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("orderNotes")
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("restaurantId")
