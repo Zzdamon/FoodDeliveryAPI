@@ -24,14 +24,14 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Users>> GetUsers(int id)
+        public async Task<ActionResult<User>> GetUsers(int id)
         {
             var users = await _context.Users.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Users/auth
         [HttpGet("auth/{email}/{password}") ]
-        public async Task<ActionResult<Users>> GetUsers(string provider,string email,string password)
+        public async Task<ActionResult<User>> GetUsers(string provider,string email,string password)
         {
             var users = await _context.Users.Where(user => user.email == email)
                .FirstOrDefaultAsync();
@@ -69,7 +69,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsers(int id, Users users)
+        public async Task<IActionResult> PutUsers(int id, User users)
         {
             if (id != users.userId)
             {
@@ -101,7 +101,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Users>> PostUsers(Users users)
+        public async Task<ActionResult<User>> PostUsers(User users)
         {
             _context.Users.Add(users);
             await _context.SaveChangesAsync();
@@ -111,7 +111,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Users>> DeleteUsers(int id)
+        public async Task<ActionResult<User>> DeleteUsers(int id)
         {
             var users = await _context.Users.FindAsync(id);
             if (users == null)
@@ -127,7 +127,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/Users
         [HttpDelete()]
-        public async Task<ActionResult<IEnumerable<Users>>> DeleteUsers()
+        public async Task<ActionResult<IEnumerable<User>>> DeleteUsers()
         {
             var users = await _context.Users.ToListAsync();
             if (users == null)

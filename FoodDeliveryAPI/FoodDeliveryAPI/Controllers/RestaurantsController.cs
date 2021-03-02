@@ -22,14 +22,14 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Restaurants
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Restaurants>>> GetRestaurants()
+        public async Task<ActionResult<IEnumerable<Restaurant>>> GetRestaurants()
         {
             return await _context.Restaurants.ToListAsync();
         }
 
         // GET: api/Restaurants/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Restaurants>> GetRestaurants(int id)
+        public async Task<ActionResult<Restaurant>> GetRestaurants(int id)
         {
             var restaurants = await _context.Restaurants.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRestaurants(int id, Restaurants restaurants)
+        public async Task<IActionResult> PutRestaurants(int id, Restaurant restaurants)
         {
             if (id != restaurants.id)
             {
@@ -77,7 +77,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Restaurants>> PostRestaurants(Restaurants restaurants)
+        public async Task<ActionResult<Restaurant>> PostRestaurants(Restaurant restaurants)
         {
             _context.Restaurants.Add(restaurants);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/Restaurants/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Restaurants>> DeleteRestaurants(int id)
+        public async Task<ActionResult<Restaurant>> DeleteRestaurants(int id)
         {
             var restaurants = await _context.Restaurants.FindAsync(id);
             if (restaurants == null)

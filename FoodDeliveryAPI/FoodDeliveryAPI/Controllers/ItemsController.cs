@@ -22,14 +22,14 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Items>>> GetItems()
+        public async Task<ActionResult<IEnumerable<Item>>> GetItems()
         {
             return await _context.Items.ToListAsync();
         }
 
         // GET: api/Items/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Items>> GetItems(int id)
+        public async Task<ActionResult<Item>> GetItems(int id)
         {
             var items = await _context.Items.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutItems(int id, Items items)
+        public async Task<IActionResult> PutItems(int id, Item items)
         {
             if (id != items.itemId)
             {
@@ -77,7 +77,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Items>> PostItems(Items items)
+        public async Task<ActionResult<Item>> PostItems(Item items)
         {
             _context.Items.Add(items);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/Items/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Items>> DeleteItems(int id)
+        public async Task<ActionResult<Item>> DeleteItems(int id)
         {
             var items = await _context.Items.FindAsync(id);
             if (items == null)

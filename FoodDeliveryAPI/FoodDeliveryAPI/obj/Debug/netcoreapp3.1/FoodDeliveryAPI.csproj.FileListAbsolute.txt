@@ -7,8 +7,6 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\FoodDeliveryAPI.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\FoodDeliveryAPI.pdb
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -25,9 +23,6 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
@@ -151,4 +146,8 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.pdb
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.genruntimeconfig.cache
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll

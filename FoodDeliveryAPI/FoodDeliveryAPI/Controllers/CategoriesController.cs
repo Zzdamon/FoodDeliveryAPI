@@ -22,14 +22,14 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Categories>>> GetCategories()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
             return await _context.Categories.ToListAsync();
         }
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Categories>> GetCategories(int id)
+        public async Task<ActionResult<Category>> GetCategories(int id)
         {
             var categories = await _context.Categories.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategories(int id, Categories categories)
+        public async Task<IActionResult> PutCategories(int id, Category categories)
         {
             if (id != categories.categId)
             {
@@ -77,7 +77,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Categories>> PostCategories(Categories categories)
+        public async Task<ActionResult<Category>> PostCategories(Category categories)
         {
             _context.Categories.Add(categories);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Categories>> DeleteCategories(int id)
+        public async Task<ActionResult<Category>> DeleteCategories(int id)
         {
             var categories = await _context.Categories.FindAsync(id);
             if (categories == null)

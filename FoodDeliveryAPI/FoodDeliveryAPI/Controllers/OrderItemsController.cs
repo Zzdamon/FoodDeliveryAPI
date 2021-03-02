@@ -22,14 +22,14 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/OrderItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderItems>>> GetOrderItems()
+        public async Task<ActionResult<IEnumerable<OrderItem>>> GetOrderItems()
         {
             return await _context.OrderItems.ToListAsync();
         }
 
         // GET: api/OrderItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderItems>> GetOrderItems(int id)
+        public async Task<ActionResult<OrderItem>> GetOrderItems(int id)
         {
             var orderItems = await _context.OrderItems.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrderItems(int id, OrderItems orderItems)
+        public async Task<IActionResult> PutOrderItems(int id, OrderItem orderItems)
         {
             if (id != orderItems.itemId)
             {
@@ -77,7 +77,7 @@ namespace FoodDeliveryAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<OrderItems>> PostOrderItems(OrderItems orderItems)
+        public async Task<ActionResult<OrderItem>> PostOrderItems(OrderItem orderItems)
         {
             _context.OrderItems.Add(orderItems);
             try
@@ -101,7 +101,7 @@ namespace FoodDeliveryAPI.Controllers
 
         // DELETE: api/OrderItems/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<OrderItems>> DeleteOrderItems(int id)
+        public async Task<ActionResult<OrderItem>> DeleteOrderItems(int id)
         {
             var orderItems = await _context.OrderItems.FindAsync(id);
             if (orderItems == null)

@@ -13,20 +13,33 @@ namespace FoodDeliveryAPI.Models
             
         }
 
-        public DbSet<Restaurants>Restaurants{ get; set; }
-        public DbSet<Categories> Categories { get; set; }
-        public DbSet<Users> Users{ get; set; }
-        public DbSet<Items> Items{ get; set; }
-        public DbSet<Orders> Orders{ get; set; }
-        public DbSet<OrderItems> OrderItems{ get; set; }
+        public DbSet<Restaurant>Restaurants{ get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users{ get; set; }
+        public DbSet<Item> Items{ get; set; }
+        public DbSet<Order> Orders{ get; set; }
+        public DbSet<OrderItem> OrderItems{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Users>()
+            builder.Entity<RestaurantTag>()
+        .HasKey(t => new { t.RestaurantId, t.TagId });
+
+            builder.Entity<RestaurantTag>()
+                .HasOne(rt => rt.restaurant)
+                .WithMany(p => p.RestaurantTags)
+                .HasForeignKey(pt => pt.RestaurantId);
+
+            builder.Entity<RestaurantTag>()
+                .HasOne(rt => rt.Tag)
+                .WithMany(t => t.RestaurantTags)
+                .HasForeignKey(pt => pt.TagId);
+
+            builder.Entity<User>()
             .HasIndex(u => u.email)
             .IsUnique();
 
-            builder.Entity<OrderItems>().HasKey(table => new { table.itemId, table.orderId });
+            builder.Entity<OrderItem>().HasKey(table => new { table.itemId, table.orderId });
         }
 
     }

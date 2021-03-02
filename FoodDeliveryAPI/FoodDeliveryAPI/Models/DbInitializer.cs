@@ -17,74 +17,74 @@ namespace FoodDeliveryAPI.Models
                 return;   // DB has been seeded
             }
 
-            var restaurants = new Restaurants[]
+            var restaurants = new Restaurant[]
             {
-                new Restaurants{name="KFC", minOrder=25,logo="https://i.imgur.com/DWJWbwa.png",
+                new Restaurant{name="KFC", minOrder=25,logo="https://i.imgur.com/DWJWbwa.png",
                     address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
                     description="fast food"},
 
-                 new Restaurants{name="McDonald's", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
+                 new Restaurant{name="McDonald's", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
                     address="Bulevardul Mamaia 255, Constanța 300417",
                     description="fast food"},
 
-                  new Restaurants{name="Domino's Pizza", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
+                  new Restaurant{name="Domino's Pizza", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
                     address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
                     description="pizza"}
             };
-            foreach (Restaurants s in restaurants)
+            foreach (Restaurant s in restaurants)
             {
                 context.Restaurants.Add(s);
             }
             context.SaveChanges();
 
-            var categories = new Categories[]
+            var categories = new Category[]
             {
-                new Categories
+                new Category
                 {
                     name="Buckets",
                     restaurantId=1
                 },
 
-                new Categories
+                new Category
                 {
                     name="Burgers",
                     restaurantId=1
                 },
 
-                new Categories
+                new Category
                 {
                     name="Pizza",
                     restaurantId=3
                 },
 
-                new Categories
+                new Category
                 {
                     name="Pasta",
                     restaurantId=3
                 },
 
-                new Categories
+                new Category
                 {
                     name="Premium Menus",
                     restaurantId=2
                 },
 
-                new Categories
+                new Category
                 {
                     name="Classic Menus",
                     restaurantId=2
                 },
 
             };
-            foreach (Categories s in categories)
+            foreach (Category s in categories)
             {
                 context.Categories.Add(s);
             }
             context.SaveChanges();
 
-            var items = new Items[]
+            var items = new Item[]
             {
-                new Items
+                new Item
                 {
                     name="Giant Bucket",
                     price=80,
@@ -92,14 +92,14 @@ namespace FoodDeliveryAPI.Models
                     categId=1
                 },
 
-                 new Items
+                 new Item
                 {
                     name="Booster",
                     description="chicken burger",
                     price=20.5F,
                     categId=2
                 },
-                  new Items
+                  new Item
                 {
                     name="Pizza Domino's Special",
                     description="tomato sauce, salami, cheese",
@@ -107,21 +107,21 @@ namespace FoodDeliveryAPI.Models
                     categId=3
                 },
 
-                  new Items
+                  new Item
                 {
                     name="Carbonara Pasta",
                     description="pasta with cheese and bacon",
                     price=24.5F,
                     categId=4
                 },
-                  new Items
+                  new Item
                 {
                     name="Royal Deluxe Menu",
                     description="Big tasty burger, large fries, cola/fanta/sprite",
                     price=21,
                     categId=5
                 },
-                  new Items
+                  new Item
                 {
                     name="McChicken Menu",
                     description="McChicken burger, fries, cola/fanta/sprite",
@@ -129,7 +129,7 @@ namespace FoodDeliveryAPI.Models
                     categId=6
                 },
             };
-            foreach (Items s in items)
+            foreach (Item s in items)
             {
                 context.Items.Add(s);
             }

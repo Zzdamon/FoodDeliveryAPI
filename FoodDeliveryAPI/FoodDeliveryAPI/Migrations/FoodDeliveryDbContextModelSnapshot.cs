@@ -18,7 +18,7 @@ namespace FoodDeliveryAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Categories", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Category", b =>
                 {
                     b.Property<int>("categId")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace FoodDeliveryAPI.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Items", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Item", b =>
                 {
                     b.Property<int>("itemId")
                         .ValueGeneratedOnAdd()
@@ -64,20 +64,7 @@ namespace FoodDeliveryAPI.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.OrderItems", b =>
-                {
-                    b.Property<int>("itemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("orderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("itemId", "orderId");
-
-                    b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Orders", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Order", b =>
                 {
                     b.Property<int>("orderId")
                         .ValueGeneratedOnAdd()
@@ -108,7 +95,20 @@ namespace FoodDeliveryAPI.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Restaurants", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.OrderItem", b =>
+                {
+                    b.Property<int>("itemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("orderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("itemId", "orderId");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Restaurant", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -135,7 +135,32 @@ namespace FoodDeliveryAPI.Migrations
                     b.ToTable("Restaurants");
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Users", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.RestaurantTag", b =>
+                {
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TagId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("RestaurantId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("RestaurantTag");
+                });
+
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Tag", b =>
+                {
+                    b.Property<string>("tagId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("tagId");
+
+                    b.ToTable("Tag");
+                });
+
+            modelBuilder.Entity("FoodDeliveryAPI.Models.User", b =>
                 {
                     b.Property<int>("userId")
                         .ValueGeneratedOnAdd()
@@ -168,35 +193,50 @@ namespace FoodDeliveryAPI.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Categories", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Category", b =>
                 {
-                    b.HasOne("FoodDeliveryAPI.Models.Restaurants", "Restaurant")
+                    b.HasOne("FoodDeliveryAPI.Models.Restaurant", "Restaurant")
                         .WithMany()
                         .HasForeignKey("restaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Items", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Item", b =>
                 {
-                    b.HasOne("FoodDeliveryAPI.Models.Categories", "Category")
+                    b.HasOne("FoodDeliveryAPI.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("categId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FoodDeliveryAPI.Models.Orders", b =>
+            modelBuilder.Entity("FoodDeliveryAPI.Models.Order", b =>
                 {
-                    b.HasOne("FoodDeliveryAPI.Models.Restaurants", "Restaurant")
+                    b.HasOne("FoodDeliveryAPI.Models.Restaurant", "Restaurant")
                         .WithMany()
                         .HasForeignKey("restaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FoodDeliveryAPI.Models.Users", "User")
+                    b.HasOne("FoodDeliveryAPI.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FoodDeliveryAPI.Models.RestaurantTag", b =>
+                {
+                    b.HasOne("FoodDeliveryAPI.Models.Restaurant", "restaurant")
+                        .WithMany("RestaurantTags")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FoodDeliveryAPI.Models.Tag", "Tag")
+                        .WithMany("RestaurantTags")
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
