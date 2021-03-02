@@ -28,17 +28,27 @@ namespace FoodDeliveryAPI.Controllers
         }
 
         // GET: api/RestaurantTags/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<RestaurantTag>> GetRestaurantTag(int id)
+        [HttpGet("{tagId}")]
+        public async Task<ActionResult<IEnumerable<RestaurantTag>>> GetRestaurantTag(string tagId)
         {
-            var restaurantTag = await _context.RestaurantTag.FindAsync(id);
+            var restaurantTags=  await _context.RestaurantTag.Where(restTag => restTag.TagId.Equals(tagId) ).ToListAsync();
 
-            if (restaurantTag == null)
+            //if (restaurantTags == null)
+            //{
+            //    return NotFound();
+            //}
+
+
+            foreach (var restTag in restaurantTags)
             {
-                return NotFound();
+                restTag.restaurant = await _context.Restaurants.FindAsync(restTag.RestaurantId);
+                restTag.restaurant.RestaurantTags = null;
             }
 
-            return restaurantTag;
+
+
+
+            return restaurantTags;
         }
 
         // PUT: api/RestaurantTags/5
@@ -78,7 +88,7 @@ namespace FoodDeliveryAPI.Controllers
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<RestaurantTag>> PostRestaurantTag(RestaurantTag restaurantTag)
-        {
+        { 
             _context.RestaurantTag.Add(restaurantTag);
             try
             {
