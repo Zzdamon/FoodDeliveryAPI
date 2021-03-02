@@ -151,3 +151,4 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache

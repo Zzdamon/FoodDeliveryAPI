@@ -85,6 +85,26 @@ namespace FoodDeliveryAPI.Controllers
             return CreatedAtAction("GetOrders", new { id = orders.orderId }, orders);
         }
 
+        //[HttpPost("fullOrder")]
+        //public async Task<ActionResult<Order>> PostOrders(Order order, Item[] items)
+        //{
+        //    _context.Orders.Add(order);
+        //    var orderItems = new OrderItem[items.Length];
+
+
+        //    for(int i=0;i<items.Length;i++)
+        //    {
+        //        orderItems[i].itemId = items[i].itemId;
+        //        orderItems[i].orderId = order.orderId;
+        //    }
+
+
+        //    _context.OrderItems.AddRange(orderItems);
+        //    await _context.SaveChangesAsync();
+
+        //    return CreatedAtAction("GetOrders", new { id = order.orderId }, order);
+        //}
+
         // DELETE: api/Orders/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Order>> DeleteOrders(int id)

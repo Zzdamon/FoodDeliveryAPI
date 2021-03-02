@@ -3,14 +3,16 @@ using FoodDeliveryAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodDeliveryAPI.Migrations
 {
     [DbContext(typeof(FoodDeliveryDbContext))]
-    partial class FoodDeliveryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210302143113_New_02.03.2021")]
+    partial class New_02032021
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -159,7 +161,7 @@ namespace FoodDeliveryAPI.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("description")
-                        .HasColumnType("nvarchar(150)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("tagId");
 

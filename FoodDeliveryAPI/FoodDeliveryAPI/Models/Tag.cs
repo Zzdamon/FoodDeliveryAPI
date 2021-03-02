@@ -12,8 +12,11 @@ namespace FoodDeliveryAPI.Models
         [Key]
         public string tagId { get; set; }
 
-        [Column(TypeName = "nvarchar(20)")]
+        [Column(TypeName = "nvarchar(150)")]
         public string description { get; set; }
+
+        [Column(TypeName = "nvarchar(100)")]
+        public string banner { get; set; }
 
         public List<RestaurantTag> RestaurantTags { get; set; }
 

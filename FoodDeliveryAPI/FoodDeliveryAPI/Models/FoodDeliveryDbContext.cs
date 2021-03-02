@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodDeliveryAPI.Models;
 
 namespace FoodDeliveryAPI.Models
 {
@@ -19,6 +20,11 @@ namespace FoodDeliveryAPI.Models
         public DbSet<Item> Items{ get; set; }
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderItem> OrderItems{ get; set; }
+
+        public DbSet<FoodDeliveryAPI.Models.Tag> Tag { get; set; }
+
+        public DbSet<FoodDeliveryAPI.Models.RestaurantTag> RestaurantTag { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -41,6 +47,8 @@ namespace FoodDeliveryAPI.Models
 
             builder.Entity<OrderItem>().HasKey(table => new { table.itemId, table.orderId });
         }
+
+   
 
     }
 }

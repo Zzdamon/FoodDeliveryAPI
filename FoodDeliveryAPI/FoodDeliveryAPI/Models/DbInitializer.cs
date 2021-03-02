@@ -12,7 +12,7 @@ namespace FoodDeliveryAPI.Models
             context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Restaurants.Any())
+            if (context.Restaurants.Any() || context.Categories.Any() || context.Items.Any() || context.Tag.Any() || context.RestaurantTag.Any())
             {
                 return;   // DB has been seeded
             }
@@ -21,15 +21,18 @@ namespace FoodDeliveryAPI.Models
             {
                 new Restaurant{name="KFC", minOrder=25,logo="https://i.imgur.com/DWJWbwa.png",
                     address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
-                    description="fast food"},
+                    description="fast food",
+                    },
 
                  new Restaurant{name="McDonald's", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
                     address="Bulevardul Mamaia 255, Constanța 300417",
-                    description="fast food"},
+                    description="fast food",
+                    },
 
                   new Restaurant{name="Domino's Pizza", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
                     address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
-                    description="pizza"}
+                    description="pizza",
+                    }
             };
             foreach (Restaurant s in restaurants)
             {
@@ -135,9 +138,69 @@ namespace FoodDeliveryAPI.Models
             }
             context.SaveChanges();
 
+
+            var tags = new Tag[]
+            {
+                new Tag
+                {   tagId="pizza",
+                    banner="https://i.imgur.com/7hm6AZ6.png",
+                    description="Best pizza made by italian chefs"
+                },
+                new Tag
+                {
+                    tagId="burgers",
+                    banner="https://i.imgur.com/LhG3CIk.jpg",
+                    description="Best american burgers"
+                },
+                  new Tag
+                {
+                    tagId="fast food",
+                    banner="https://i.imgur.com/h1SGcqq.jpg",
+                    description="Fast food for when you're in a hurry"
+                }
+            };
+            foreach (Tag s in tags)
+            {
+                context.Tag.Add(s);
+            }
+            context.SaveChanges();
+
+
+            var restTags = new RestaurantTag[]
+             {
+               new RestaurantTag
+               {
+                   RestaurantId=1,
+                   TagId="burgers"
+               },
+             new RestaurantTag
+               {
+                   RestaurantId=2,
+                   TagId="burgers"
+               },
+             new RestaurantTag
+               {
+                   RestaurantId=2,
+                   TagId="fast food"
+               },
+             new RestaurantTag
+               {
+                   RestaurantId=3,
+                   TagId="pizza"
+               },
+             };
+            foreach (RestaurantTag s in restTags)
+            {
+                context.RestaurantTag.Add(s);
+            }
+            context.SaveChanges();
         }
-
-
     }
 }
-    
+
+
+
+
+//context.Tags.Where(tag => tag.description =="Best american burgers" ).FirstOrDefault().tagId
+//context.Tags.Where(tag => tag.description =="Fast food for when you're in a hurry" ).FirstOrDefault().tagId
+//=context.Tags.Where(tag => tag.description =="Best pizza made by italian chefs" ).FirstOrDefault().tagId
