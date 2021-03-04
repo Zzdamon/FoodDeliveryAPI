@@ -43,6 +43,7 @@ namespace FoodDeliveryAPI.Controllers
             return users;
         }
 
+        //WEIRD REQUEST - not sure about this one
         // GET: api/Users/auth
         [HttpGet("auth/{email}/{password}") ]
         public async Task<ActionResult<User>> GetUsers(string provider,string email,string password)
