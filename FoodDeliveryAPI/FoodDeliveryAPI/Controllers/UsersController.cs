@@ -48,10 +48,10 @@ namespace FoodDeliveryAPI.Controllers
         //WEIRD REQUEST - not sure about this one
         // GET: api/Users/auth
         [HttpPost("auth") ]
-        public async Task<ActionResult<User>> Auth(User user)
+        public async Task<ActionResult<User>> Auth(Auth auth)
         {
-            string email = user.email;
-            string password = user.Password;
+            string email = auth.email;
+            string password = auth.Password;
             var users = await _context.Users.Where(user => user.email == email)
                .FirstOrDefaultAsync();
 
@@ -60,11 +60,11 @@ namespace FoodDeliveryAPI.Controllers
                 return NotFound("User with the email "+email+"doesn't exist");
             }
 
-            //string hashPass = new HashPassword().hashPassword(password,users.email);
-            //if (hashPass == users.Password)
-            //{
-            //    return Ok(users);
-            //}
+            //string hashPass = new HashPassword().hashPassword(password, users.email);
+            if (password == users.Password)
+            {
+                return Ok(users);
+            }
 
             return NotFound("incorect password");
      

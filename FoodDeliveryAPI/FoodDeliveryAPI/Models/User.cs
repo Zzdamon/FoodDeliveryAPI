@@ -33,7 +33,7 @@ namespace FoodDeliveryAPI.Models
     //    else throw new Exception("Invalid provider");
     //}
 
-    public class User
+    public class User:Auth
     {   [Key]
         public int userId { get; set; }
 
@@ -48,15 +48,15 @@ namespace FoodDeliveryAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string defaultAddress { get; set; }
 
-        [Required]
-        [Column(TypeName = "nvarchar(100)")]
-        public string email { get; set; }
+        //[Required]
+        //[Column(TypeName = "nvarchar(100)")]
+        //public string email { get; set; }
 
-        public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.email ); }
+        //public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.email ); }
 
-        [Required]
-        [Column(TypeName = "nvarchar(200)")]
-        private string password;
+        //[Required]
+        //[Column(TypeName = "nvarchar(200)")]
+        //private string password;
 
     }
 }
