@@ -41,6 +41,21 @@ namespace FoodDeliveryAPI.Controllers
             return items;
         }
 
+        // GET: api/Items/5
+        [HttpPost("byCategId")]
+        public async Task<ActionResult<IEnumerable<Item>>> GetItemsByCateg([FromBody] int[] categId)
+        {
+            var items = await _context.Items.Where(item=>categId.Contains(item.categId)).ToListAsync() ;
+
+            if (items == null)
+            {
+                return NotFound();
+            }
+
+            return items;
+        }
+
+
         // PUT: api/Items/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

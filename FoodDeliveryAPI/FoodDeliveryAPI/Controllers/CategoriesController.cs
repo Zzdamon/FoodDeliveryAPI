@@ -41,6 +41,20 @@ namespace FoodDeliveryAPI.Controllers
             return categories;
         }
 
+        // GET: api/Categories/5
+        [HttpGet("byRestId/{restId}")]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesByRestId(int restId)
+        {
+            var categories =await _context.Categories.Where(categ => categ.restaurantId == restId).ToListAsync() ;
+
+            if (categories == null)
+            {
+                return NotFound();
+            }
+
+            return categories;
+        }
+
         // PUT: api/Categories/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
