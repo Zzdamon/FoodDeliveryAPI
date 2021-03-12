@@ -28,6 +28,9 @@ namespace FoodDeliveryAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string description { get; set; }
 
+        public double restaurantLat { get; set; }
+        public double restaurantLng { get; set; }
+
         public List<RestaurantTag> RestaurantTags { get; set; }
 
     }

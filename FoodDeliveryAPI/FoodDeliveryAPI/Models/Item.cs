@@ -22,5 +22,6 @@ namespace FoodDeliveryAPI.Models
         [ForeignKey("Category")]
         public int categId { get; set; }
         public Category Category { get; set; }
+
     }
 }

@@ -20,6 +20,11 @@ namespace FoodDeliveryAPI.Models
         [Column(TypeName = "nvarchar(200)")]
         public string deliveryAddress { get; set; }
 
+
+        public double deliveryLat { get; set; }
+        public double deliveryLng { get; set; }
+
+
         [Column(TypeName = "nvarchar(200)")]
         public string orderNotes { get; set; }
 

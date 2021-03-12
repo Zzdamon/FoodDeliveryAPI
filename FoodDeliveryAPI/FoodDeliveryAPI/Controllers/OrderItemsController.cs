@@ -99,6 +99,22 @@ namespace FoodDeliveryAPI.Controllers
             return CreatedAtAction("GetOrderItems", new { id = orderItems.itemId }, orderItems);
         }
 
+        [HttpPost("bulk")]
+        public async Task<ActionResult<IEnumerable<OrderItem>>> PostOrderItems(List<OrderItem> orderItems)
+        {
+            _context.OrderItems.AddRange(orderItems);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            { 
+                    throw;                
+            }
+
+            return orderItems;
+        }
+
         // DELETE: api/OrderItems/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<OrderItem>> DeleteOrderItems(int id)
