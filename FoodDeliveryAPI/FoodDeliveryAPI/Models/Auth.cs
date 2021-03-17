@@ -11,9 +11,9 @@ namespace FoodDeliveryAPI.Models
     {
         [Required]
         [Column(TypeName = "nvarchar(100)")]
-        public string email{get; set;}
+        public string Email{get; set;}
 
-        public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.email); }
+        public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.Email); }
 
         [Required]
         [Column(TypeName = "nvarchar(200)")]

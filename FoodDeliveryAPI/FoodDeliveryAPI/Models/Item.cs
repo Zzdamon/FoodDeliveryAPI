@@ -9,18 +9,18 @@ namespace FoodDeliveryAPI.Models
 {
     public class Item
     {   [Key]
-        public int itemId { get; set; }
+        public int ItemId { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
-        public float price { get; set; }
+        public float Price { get; set; }
 
         [ForeignKey("Category")]
-        public int categId { get; set; }
+        public int CategId { get; set; }
         public Category Category { get; set; }
 
     }

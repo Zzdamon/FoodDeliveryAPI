@@ -9,8 +9,8 @@ namespace FoodDeliveryAPI.Models
 {
     public class OrderItem
     {  // [Key]
-        public int itemId { get; set; }
+        public int ItemId { get; set; }
        // [Key]
-        public int orderId { get; set; }
+        public int OrderId { get; set; }
     }
 }

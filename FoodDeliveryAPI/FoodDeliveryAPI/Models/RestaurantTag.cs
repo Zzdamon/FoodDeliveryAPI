@@ -8,7 +8,7 @@ namespace FoodDeliveryAPI.Models
     public class RestaurantTag
     {
         public int RestaurantId { get; set; }
-        public Restaurant restaurant { get; set; }
+        public Restaurant Restaurant { get; set; }
 
         public string TagId { get; set; }
         public Tag Tag { get; set; }

@@ -16,7 +16,8 @@ namespace FoodDeliveryAPI.Models
 
         public DbSet<Restaurant>Restaurants{ get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<User> Users{ get; set; }
+        public DbSet<Client> Clients{ get; set; }
+        public DbSet<Courier> Couriers{ get; set; }
         public DbSet<Item> Items{ get; set; }
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderItem> OrderItems{ get; set; }
@@ -32,7 +33,7 @@ namespace FoodDeliveryAPI.Models
         .HasKey(t => new { t.RestaurantId, t.TagId });
 
             builder.Entity<RestaurantTag>()
-                .HasOne(rt => rt.restaurant)
+                .HasOne(rt => rt.Restaurant)
                 .WithMany(p => p.RestaurantTags)
                 .HasForeignKey(pt => pt.RestaurantId);
 
@@ -41,11 +42,16 @@ namespace FoodDeliveryAPI.Models
                 .WithMany(t => t.RestaurantTags)
                 .HasForeignKey(pt => pt.TagId);
 
-            builder.Entity<User>()
-            .HasIndex(u => u.email)
+            builder.Entity<Client>()
+            .HasIndex(u => u.Email)
             .IsUnique();
 
-            builder.Entity<OrderItem>().HasKey(table => new { table.itemId, table.orderId });
+
+            builder.Entity<Courier>()
+            .HasIndex(u => u.Email)
+            .IsUnique();
+
+            builder.Entity<OrderItem>().HasKey(table => new { table.ItemId, table.OrderId });
         }
 
    

@@ -47,7 +47,7 @@ namespace FoodDeliveryAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTag(string id, Tag tag)
         {
-            if (id != tag.tagId)
+            if (id != tag.TagId)
             {
                 return BadRequest();
             }
@@ -86,7 +86,7 @@ namespace FoodDeliveryAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (TagExists(tag.tagId))
+                if (TagExists(tag.TagId))
                 {
                     return Conflict();
                 }
@@ -96,7 +96,7 @@ namespace FoodDeliveryAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetTag", new { id = tag.tagId }, tag);
+            return CreatedAtAction("GetTag", new { id = tag.TagId }, tag);
         }
 
         // DELETE: api/Tags/5
@@ -117,7 +117,7 @@ namespace FoodDeliveryAPI.Controllers
 
         private bool TagExists(string id)
         {
-            return _context.Tag.Any(e => e.tagId == id);
+            return _context.Tag.Any(e => e.TagId == id);
         }
     }
 }

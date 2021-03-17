@@ -34,29 +34,24 @@ namespace FoodDeliveryAPI.Models
     //}
 
     public class User:Auth
-    {   [Key]
-        public int userId { get; set; }
+    {   
 
         [Required]
-        [Column(TypeName = "nvarchar(20)")]
-        public string accountType { get; set; }
-        
+        [Column(TypeName = "nvarchar(50)")]
+        public string Name { get; set; }
+
         [Required]
-        [Column(TypeName = "nvarchar(100)")]
-        public string name { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string Surname { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
-        public string defaultAddress { get; set; }
-
-        //[Required]
         //[Column(TypeName = "nvarchar(100)")]
-        //public string email { get; set; }
+        //public string DefaultAddress { get; set; }
 
-        //public string Password { get => password; set => password = new HashPassword().hashPassword(value, this.email ); }
 
         //[Required]
-        //[Column(TypeName = "nvarchar(200)")]
-        //private string password;
+        //[Column(TypeName = "nvarchar(20)")]
+        //public string accountType { get; set; }
+
 
     }
 }

@@ -4,18 +4,31 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Migrations\20210305181028_Test_05.03.2021.cs" />
     <Compile Remove="Migrations\20210305181028_Test_05.03.2021.Designer.cs" />
+    <Compile Remove="Migrations\20210317103933_Test_17_03_2021.cs" />
+    <Compile Remove="Migrations\20210317103933_Test_17_03_2021.Designer.cs" />
+    <Compile Remove="Migrations\20210317104547_Test3_17_03_2021.cs" />
+    <Compile Remove="Migrations\20210317104547_Test3_17_03_2021.Designer.cs" />
+    <Compile Remove="Migrations\20210317105746_Test4_17_03_2021.cs" />
+    <Compile Remove="Migrations\20210317105746_Test4_17_03_2021.Designer.cs" />
+    <Compile Remove="Migrations\20210317105903_Test5_17_03_2021.cs" />
+    <Compile Remove="Migrations\20210317105903_Test5_17_03_2021.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.12" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

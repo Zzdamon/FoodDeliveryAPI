@@ -10,13 +10,13 @@ namespace FoodDeliveryAPI.Models
     public class Tag
     {
         [Key]
-        public string tagId { get; set; }
+        public string TagId { get; set; }
 
         [Column(TypeName = "nvarchar(150)")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string banner { get; set; }
+        public string Banner { get; set; }
 
         public List<RestaurantTag> RestaurantTags { get; set; }
 

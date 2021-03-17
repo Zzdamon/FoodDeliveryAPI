@@ -9,31 +9,35 @@ namespace FoodDeliveryAPI.Models
 {
     public class Order
     {   [Key]
-        public int orderId { get; set; }
+        public int OrderId { get; set; }
 
-        [ForeignKey("User")]
-        public int userId { get; set; }
+        [ForeignKey("Client")]
+        public int ClientId { get; set; }
+        
+        [ForeignKey("Courier")]
+        public int CourierId { get; set; }
 
         [ForeignKey("Restaurant")]
-        public int restaurantId { get; set; }
+        public int RestaurantId { get; set; }
 
         [Column(TypeName = "nvarchar(200)")]
-        public string deliveryAddress { get; set; }
+        public string DeliveryAddress { get; set; }
 
 
-        public double deliveryLat { get; set; }
-        public double deliveryLng { get; set; }
+        public double DeliveryLat { get; set; }
+        public double DeliveryLng { get; set; }
 
 
         [Column(TypeName = "nvarchar(200)")]
-        public string orderNotes { get; set; }
+        public string OrderNotes { get; set; }
 
 
         [Column(TypeName = "nvarchar(100)")]
-        public string stage { get; set; }
+        public string Stage { get; set; }
 
 
-        public User User { get; set; }
+        public Client Client { get; set; }
+        public Courier Courier { get; set; }
         public Restaurant Restaurant{ get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace FoodDeliveryAPI.Controllers
         [HttpGet("byRestId/{restId}")]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesByRestId(int restId)
         {
-            var categories =await _context.Categories.Where(categ => categ.restaurantId == restId).ToListAsync() ;
+            var categories =await _context.Categories.Where(categ => categ.RestaurantId == restId).ToListAsync() ;
 
             if (categories == null)
             {
@@ -61,7 +61,7 @@ namespace FoodDeliveryAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategories(int id, Category categories)
         {
-            if (id != categories.categId)
+            if (id != categories.CategId)
             {
                 return BadRequest();
             }
@@ -96,7 +96,7 @@ namespace FoodDeliveryAPI.Controllers
             _context.Categories.Add(categories);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCategories", new { id = categories.categId }, categories);
+            return CreatedAtAction("GetCategories", new { id = categories.CategId }, categories);
         }
 
         // DELETE: api/Categories/5
@@ -117,7 +117,7 @@ namespace FoodDeliveryAPI.Controllers
 
         private bool CategoriesExists(int id)
         {
-            return _context.Categories.Any(e => e.categId == id);
+            return _context.Categories.Any(e => e.CategId == id);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace FoodDeliveryAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrderItems(int id, OrderItem orderItems)
         {
-            if (id != orderItems.itemId)
+            if (id != orderItems.ItemId)
             {
                 return BadRequest();
             }
@@ -86,7 +86,7 @@ namespace FoodDeliveryAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (OrderItemsExists(orderItems.itemId))
+                if (OrderItemsExists(orderItems.ItemId))
                 {
                     return Conflict();
                 }
@@ -96,7 +96,7 @@ namespace FoodDeliveryAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetOrderItems", new { id = orderItems.itemId }, orderItems);
+            return CreatedAtAction("GetOrderItems", new { id = orderItems.ItemId }, orderItems);
         }
 
         [HttpPost("bulk")]
@@ -133,7 +133,7 @@ namespace FoodDeliveryAPI.Controllers
 
         private bool OrderItemsExists(int id)
         {
-            return _context.OrderItems.Any(e => e.itemId == id);
+            return _context.OrderItems.Any(e => e.ItemId == id);
         }
     }
 }

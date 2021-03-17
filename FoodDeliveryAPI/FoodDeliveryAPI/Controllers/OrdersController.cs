@@ -47,7 +47,7 @@ namespace FoodDeliveryAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrders(int id, Order orders)
         {
-            if (id != orders.orderId)
+            if (id != orders.OrderId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace FoodDeliveryAPI.Controllers
             _context.Orders.Add(orders);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrders", new { id = orders.orderId }, orders);
+            return CreatedAtAction("GetOrders", new { id = orders.OrderId }, orders);
         }
 
         //[HttpPost("fullOrder")]
@@ -144,7 +144,7 @@ namespace FoodDeliveryAPI.Controllers
 
         private bool OrdersExists(int id)
         {
-            return _context.Orders.Any(e => e.orderId == id);
+            return _context.Orders.Any(e => e.OrderId == id);
         }
     }
 }

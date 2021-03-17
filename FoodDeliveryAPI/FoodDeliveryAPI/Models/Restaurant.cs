@@ -9,27 +9,27 @@ namespace FoodDeliveryAPI.Models
 {
     public class Restaurant
     {   [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Column(TypeName ="nvarchar(100)")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public float minOrder { get; set; }
+        public float MinOrder { get; set; }
 
         [Column(TypeName = "nvarchar(200)")]
-        public string logo { get; set; }
+        public string Logo { get; set; }
 
         //public float lat { get; set; }
         //public float lng { get; set; }
 
         [Column(TypeName = "nvarchar(200)")]
-        public string address { get; set; }
+        public string Address { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
-        public double restaurantLat { get; set; }
-        public double restaurantLng { get; set; }
+        public double RestaurantLat { get; set; }
+        public double RestaurantLng { get; set; }
 
         public List<RestaurantTag> RestaurantTags { get; set; }
 

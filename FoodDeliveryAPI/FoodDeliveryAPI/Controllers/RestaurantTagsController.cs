@@ -41,8 +41,8 @@ namespace FoodDeliveryAPI.Controllers
 
             foreach (var restTag in restaurantTags)
             {
-                restTag.restaurant = await _context.Restaurants.FindAsync(restTag.RestaurantId);
-                restTag.restaurant.RestaurantTags = null;
+                restTag.Restaurant = await _context.Restaurants.FindAsync(restTag.RestaurantId);
+                restTag.Restaurant.RestaurantTags = null;
             }
 
 

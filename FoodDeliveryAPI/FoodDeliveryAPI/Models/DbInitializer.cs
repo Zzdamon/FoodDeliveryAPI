@@ -19,19 +19,19 @@ namespace FoodDeliveryAPI.Models
 
             var restaurants = new Restaurant[]
             {
-                new Restaurant{name="KFC", minOrder=25,logo="https://i.imgur.com/DWJWbwa.png",
-                    address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
-                    description="fast food",
+                new Restaurant{Name="KFC", MinOrder=25,Logo="https://i.imgur.com/DWJWbwa.png",
+                    Address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
+                    Description="fast food",
                     },
 
-                 new Restaurant{name="McDonald's", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
-                    address="Bulevardul Mamaia 255, Constanța 300417",
-                    description="fast food",
+                 new Restaurant{Name="McDonald's", MinOrder=20,Logo="https://i.imgur.com/Lk9Fexu.png",
+                    Address="Bulevardul Mamaia 255, Constanța 300417",
+                    Description="fast food",
                     },
 
-                  new Restaurant{name="Domino's Pizza", minOrder=20,logo="https://i.imgur.com/Lk9Fexu.png",
-                    address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
-                    description="pizza",
+                  new Restaurant{Name="Domino's Pizza", MinOrder=20,Logo="https://i.imgur.com/Lk9Fexu.png",
+                    Address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
+                    Description="pizza",
                     }
             };
             foreach (Restaurant s in restaurants)
@@ -44,38 +44,38 @@ namespace FoodDeliveryAPI.Models
             {
                 new Category
                 {
-                    name="Buckets",
-                    restaurantId=1
+                    Name="Buckets",
+                    RestaurantId=1
                 },
 
                 new Category
                 {
-                    name="Burgers",
-                    restaurantId=1
+                    Name="Burgers",
+                    RestaurantId=1
                 },
 
                 new Category
                 {
-                    name="Pizza",
-                    restaurantId=3
+                    Name="Pizza",
+                    RestaurantId=3
                 },
 
                 new Category
                 {
-                    name="Pasta",
-                    restaurantId=3
+                    Name="Pasta",
+                    RestaurantId=3
                 },
 
                 new Category
                 {
-                    name="Premium Menus",
-                    restaurantId=2
+                    Name="Premium Menus",
+                    RestaurantId=2
                 },
 
                 new Category
                 {
-                    name="Classic Menus",
-                    restaurantId=2
+                    Name="Classic Menus",
+                    RestaurantId=2
                 },
 
             };
@@ -89,47 +89,47 @@ namespace FoodDeliveryAPI.Models
             {
                 new Item
                 {
-                    name="Giant Bucket",
-                    price=80,
-                    description="bucket for 5 people",
-                    categId=1
+                    Name="Giant Bucket",
+                    Price=80,
+                    Description="bucket for 5 people",
+                    CategId=1
                 },
 
                  new Item
                 {
-                    name="Booster",
-                    description="chicken burger",
-                    price=20.5F,
-                    categId=2
+                    Name="Booster",
+                    Description="chicken burger",
+                    Price=20.5F,
+                    CategId=2
                 },
                   new Item
                 {
-                    name="Pizza Domino's Special",
-                    description="tomato sauce, salami, cheese",
-                    price=32,
-                    categId=3
+                    Name="Pizza Domino's Special",
+                    Description="tomato sauce, salami, cheese",
+                    Price=32,
+                    CategId=3
                 },
 
                   new Item
                 {
-                    name="Carbonara Pasta",
-                    description="pasta with cheese and bacon",
-                    price=24.5F,
-                    categId=4
+                    Name="Carbonara Pasta",
+                    Description="pasta with cheese and bacon",
+                    Price=24.5F,
+                    CategId=4
                 },
                   new Item
                 {
-                    name="Royal Deluxe Menu",
-                    description="Big tasty burger, large fries, cola/fanta/sprite",
-                    price=21,
-                    categId=5
+                    Name="Royal Deluxe Menu",
+                    Description="Big tasty burger, large fries, cola/fanta/sprite",
+                    Price=21,
+                    CategId=5
                 },
                   new Item
                 {
-                    name="McChicken Menu",
-                    description="McChicken burger, fries, cola/fanta/sprite",
-                    price=17.9F,
-                    categId=6
+                    Name="McChicken Menu",
+                    Description="McChicken burger, fries, cola/fanta/sprite",
+                    Price=17.9F,
+                    CategId=6
                 },
             };
             foreach (Item s in items)
@@ -142,21 +142,21 @@ namespace FoodDeliveryAPI.Models
             var tags = new Tag[]
             {
                 new Tag
-                {   tagId="pizza",
-                    banner="https://i.imgur.com/7hm6AZ6.png",
-                    description="Best pizza made by italian chefs"
+                {   TagId="pizza",
+                    Banner="https://i.imgur.com/7hm6AZ6.png",
+                    Description="Best pizza made by italian chefs"
                 },
                 new Tag
                 {
-                    tagId="burgers",
-                    banner="https://i.imgur.com/LhG3CIk.jpg",
-                    description="Best american burgers"
+                    TagId="burgers",
+                    Banner="https://i.imgur.com/LhG3CIk.jpg",
+                    Description="Best american burgers"
                 },
                   new Tag
                 {
-                    tagId="fast food",
-                    banner="https://i.imgur.com/h1SGcqq.jpg",
-                    description="Fast food for when you're in a hurry"
+                    TagId="fast food",
+                    Banner="https://i.imgur.com/h1SGcqq.jpg",
+                    Description="Fast food for when you're in a hurry"
                 }
             };
             foreach (Tag s in tags)

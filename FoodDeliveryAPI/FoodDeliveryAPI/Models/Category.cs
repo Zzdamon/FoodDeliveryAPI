@@ -9,12 +9,12 @@ namespace FoodDeliveryAPI.Models
 {
     public class Category
     {   [Key]
-        public int categId { get; set; }
+        public int CategId { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [ForeignKey("Restaurant")]
-        public int restaurantId { get; set; }
+        public int RestaurantId { get; set; }
 
         public Restaurant Restaurant { get; set; }
     }
