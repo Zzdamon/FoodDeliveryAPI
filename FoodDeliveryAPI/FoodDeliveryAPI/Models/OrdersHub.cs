@@ -23,8 +23,18 @@ namespace FoodDeliveryAPI.Models
 
         public Task AddOrder(Order order)
         {
-            return Clients.Group(COURIER_GROUP).SendAsync("NewOrder",order);
+            return Clients.Group(COURIER_GROUP).SendAsync("NewOrder",order,"Client",Context.ConnectionId);
 
         }
+
+        public async Task TakeOrder(Order order, string clientConnectionId)
+        {
+            await Clients.OthersInGroup(COURIER_GROUP).SendAsync("ExpiredOrder", order);
+            await Clients.Client(clientConnectionId).SendAsync("UpdatedOrder", order, "Courier", Context.ConnectionId);
+            
+        }
+
+        
+
     }
 }
