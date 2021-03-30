@@ -149,10 +149,10 @@ E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+E:\LICENTA\FoodDeliveryAPI\FoodDeliveryAPI\FoodDeliveryAPI\obj\Debug\netcoreapp3.1\FoodDeliveryAPI.csprojAssemblyReference.cache

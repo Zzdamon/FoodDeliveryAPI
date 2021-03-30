@@ -15,7 +15,7 @@ namespace FoodDeliveryAPI.Models
         public int ClientId { get; set; }
         
         [ForeignKey("Courier")]
-        public int CourierId { get; set; }
+        public int? CourierId { get; set; }
 
         [ForeignKey("Restaurant")]
         public int RestaurantId { get; set; }
