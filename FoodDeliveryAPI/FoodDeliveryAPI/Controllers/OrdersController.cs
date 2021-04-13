@@ -31,7 +31,12 @@ namespace FoodDeliveryAPI.Controllers
         [HttpGet("waiting")]
         public async Task<ActionResult<IEnumerable<Order>>> GetWaitingOrders()
         {
-            return await _context.Orders.Where(order=>order.CourierId==null).ToListAsync();
+            var orders= await _context.Orders.Where(order=>order.CourierId==null).ToListAsync();
+            foreach (var order in orders)
+            {
+                order.Restaurant = await _context.Restaurants.FindAsync(order.RestaurantId);
+            }
+            return orders;
         }
 
 

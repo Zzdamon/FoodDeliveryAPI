@@ -7,36 +7,68 @@ namespace FoodDeliveryAPI.Models
 {
     public class DbInitializer
     {
-        public static void Initialize(FoodDeliveryDbContext context)
+        public async static void Initialize(FoodDeliveryDbContext context)
         {
             context.Database.EnsureCreated();
 
-            // Look for any students.
-            if (context.Restaurants.Any() || context.Categories.Any() || context.Items.Any() || context.Tag.Any() || context.RestaurantTag.Any())
+            // Look for any data.
+            if (context.Restaurants.Any() || context.Categories.Any() || context.Items.Any() || context.Tag.Any() || context.RestaurantTag.Any() || context.Clients.Any() || context.Couriers.Any() )
             {
                 return;   // DB has been seeded
             }
+
+            var client = new Client
+            {
+                Email = "damon@gmail.com",
+                Password = "1234",
+                Name = "Lepirda",
+                Surname = "Damon"
+            };
+
+            await context.Clients.AddAsync(client);
+            context.SaveChanges();
+
+
+            var courier = new Courier
+            {
+                Email = "gabi@gmail.com",
+                Password = "1234",
+                Name = "Lepirda",
+                Surname = "Gabriel"
+            };
+            
+            await context.Couriers.AddAsync(courier);
+            context.SaveChanges();
+
 
             var restaurants = new Restaurant[]
             {
                 new Restaurant{Name="KFC", MinOrder=25,Logo="https://i.imgur.com/DWJWbwa.png",
                     Address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
                     Description="fast food",
+                    RestaurantLat= 44.20326811524546 ,
+                    RestaurantLng=28.630486542562647
                     },
 
                  new Restaurant{Name="McDonald's", MinOrder=20,Logo="https://i.imgur.com/Lk9Fexu.png",
                     Address="Bulevardul Mamaia 255, Constanța 300417",
                     Description="fast food",
+                     RestaurantLat= 44.20578790563886,
+                    RestaurantLng=28.64278571187222
+
                     },
 
-                  new Restaurant{Name="Domino's Pizza", MinOrder=20,Logo="https://i.imgur.com/Lk9Fexu.png",
+                  new Restaurant{Name="Domino's Pizza", MinOrder=20,Logo="https://i.imgur.com/AEixqGw.png",
                     Address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
                     Description="pizza",
+                    RestaurantLat= 44.17645560439799,
+                    RestaurantLng=28.62225421187142
+
                     }
             };
             foreach (Restaurant s in restaurants)
             {
-                context.Restaurants.Add(s);
+               await context.Restaurants.AddAsync(s);
             }
             context.SaveChanges();
 
@@ -81,7 +113,7 @@ namespace FoodDeliveryAPI.Models
             };
             foreach (Category s in categories)
             {
-                context.Categories.Add(s);
+               await context.Categories.AddAsync(s);
             }
             context.SaveChanges();
 
@@ -134,7 +166,7 @@ namespace FoodDeliveryAPI.Models
             };
             foreach (Item s in items)
             {
-                context.Items.Add(s);
+                await context.Items.AddAsync(s);
             }
             context.SaveChanges();
 
@@ -161,7 +193,7 @@ namespace FoodDeliveryAPI.Models
             };
             foreach (Tag s in tags)
             {
-                context.Tag.Add(s);
+                await context.Tag.AddAsync(s);
             }
             context.SaveChanges();
 
@@ -191,7 +223,7 @@ namespace FoodDeliveryAPI.Models
              };
             foreach (RestaurantTag s in restTags)
             {
-                context.RestaurantTag.Add(s);
+                await context.RestaurantTag.AddAsync(s);
             }
             context.SaveChanges();
         }
