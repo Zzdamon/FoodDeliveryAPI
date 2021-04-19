@@ -13,9 +13,16 @@ namespace FoodDeliveryAPI.Models
 
         public Task JoinRoom(string roomName, int userId)
         {
-            if (!HubUser.hubUsers.TryAdd(userId, Context.ConnectionId))
-                HubUser.hubUsers[userId] = Context.ConnectionId;
-
+            if (roomName == CLIENT_GROUP)
+            {                 
+                 if (!HubUser.hubClients.TryAdd(userId, Context.ConnectionId))
+                HubUser.hubClients[userId] = Context.ConnectionId;
+            }
+            else
+            {
+                if (!HubUser.hubCouriers.TryAdd(userId, Context.ConnectionId))
+                    HubUser.hubCouriers[userId] = Context.ConnectionId;
+            }
 
             return Groups.AddToGroupAsync(Context.ConnectionId, roomName);
 
@@ -37,12 +44,12 @@ namespace FoodDeliveryAPI.Models
         {
             await Clients.OthersInGroup(COURIER_GROUP).SendAsync("ExpiredOrder", order);
 
-            await Clients.Client(HubUser.hubUsers.GetValueOrDefault(order.ClientId, "notFound")).SendAsync("UpdatedOrder", order);
+            await Clients.Client(HubUser.hubClients.GetValueOrDefault(order.ClientId, "notFound")).SendAsync("UpdatedOrder", order);
 
         }
-        public async Task SendLocation(string lat, string lng, int userId)
+        public async Task SendLocation(double lat, double lng, Order order)
         {
-            await Clients.Client(HubUser.hubUsers.GetValueOrDefault(userId, "notFound")).SendAsync("UpdatedLocation", lat, lng);
+            await Clients.Client(HubUser.hubClients.GetValueOrDefault(order.ClientId, "notFound")).SendAsync("UpdatedLocation", lat, lng);
 
         }
 

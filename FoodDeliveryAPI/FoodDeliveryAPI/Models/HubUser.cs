@@ -7,7 +7,8 @@ namespace FoodDeliveryAPI.Models
 {
     public static class HubUser
     {
-        public static Dictionary<int, string> hubUsers = new Dictionary<int, string>();
+        public static Dictionary<int, string> hubClients = new Dictionary<int, string>();
+        public static Dictionary<int, string> hubCouriers = new Dictionary<int, string>();
 
     }
 }
