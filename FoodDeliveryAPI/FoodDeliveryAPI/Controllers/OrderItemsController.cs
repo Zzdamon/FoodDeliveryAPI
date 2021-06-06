@@ -29,9 +29,13 @@ namespace FoodDeliveryAPI.Controllers
 
         // GET: api/OrderItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderItem>> GetOrderItems(int id)
+        public async Task<ActionResult<IEnumerable<OrderItem>>> GetOrderItems(int orderId)
         {
-            var orderItems = await _context.OrderItems.FindAsync(id);
+            var orderItems = await _context.OrderItems.Where(orderItem => orderItem.OrderId == orderId).ToListAsync(); 
+            foreach(var orderItem in orderItems)
+            {
+                orderItem.Item = await _context.Items.FindAsync(orderItem.ItemId);
+            }
 
             if (orderItems == null)
             {

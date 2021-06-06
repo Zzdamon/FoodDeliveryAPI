@@ -19,6 +19,34 @@
     <Compile Remove="Migrations\20210317105746_Test4_17_03_2021.Designer.cs" />
     <Compile Remove="Migrations\20210317105903_Test5_17_03_2021.cs" />
     <Compile Remove="Migrations\20210317105903_Test5_17_03_2021.Designer.cs" />
+    <Compile Remove="Migrations\20210518120457_CoordDataValidation.cs" />
+    <Compile Remove="Migrations\20210518120457_CoordDataValidation.Designer.cs" />
+    <Compile Remove="Migrations\20210605215856_ConfigureOrderItem.cs" />
+    <Compile Remove="Migrations\20210605215856_ConfigureOrderItem.Designer.cs" />
+    <Compile Remove="Migrations\20210605222129_ConfigureOrderItem.cs" />
+    <Compile Remove="Migrations\20210605222129_ConfigureOrderItem.Designer.cs" />
+    <Compile Remove="Migrations\20210606085006_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606085006_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606091305_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606091305_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606092547_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606092547_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606092938_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606092938_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606093407_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606093407_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606094338_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606094338_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606094531_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606094531_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606094823_Test6_6_21.cs" />
+    <Compile Remove="Migrations\20210606094823_Test6_6_21.Designer.cs" />
+    <Compile Remove="Migrations\20210606103346_Test6_6_21_3.cs" />
+    <Compile Remove="Migrations\20210606103346_Test6_6_21_3.Designer.cs" />
+    <Compile Remove="Migrations\20210606104709_Test6_6_21_3.cs" />
+    <Compile Remove="Migrations\20210606104709_Test6_6_21_3.Designer.cs" />
+    <Compile Remove="Migrations\20210606122851_Test6_6_21_4.cs" />
+    <Compile Remove="Migrations\20210606122851_Test6_6_21_4.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

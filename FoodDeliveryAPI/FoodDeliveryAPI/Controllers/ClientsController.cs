@@ -119,7 +119,6 @@ namespace FoodDeliveryAPI.Controllers
                 return NotFound("User with the email " + email + "doesn't exist");
             }
 
-            //string hashPass = new HashPassword().hashPassword(password, users.email);
             if (password == users.Password)
             {
                 return Ok(users);

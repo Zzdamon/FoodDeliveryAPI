@@ -19,16 +19,15 @@ namespace FoodDeliveryAPI.Models
         [Column(TypeName = "nvarchar(200)")]
         public string Logo { get; set; }
 
-        //public float lat { get; set; }
-        //public float lng { get; set; }
-
         [Column(TypeName = "nvarchar(200)")]
         public string Address { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string Description { get; set; }
 
+        [Range(-90, 90)]
         public double RestaurantLat { get; set; }
+        [Range(-180, 180)]
         public double RestaurantLng { get; set; }
 
         public List<RestaurantTag> RestaurantTags { get; set; }

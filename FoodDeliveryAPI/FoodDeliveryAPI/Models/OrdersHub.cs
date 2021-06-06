@@ -53,6 +53,12 @@ namespace FoodDeliveryAPI.Models
 
         }
 
+        public async Task FinishedOrder(Order order)
+        {
+            await Clients.Client(HubUser.hubClients.GetValueOrDefault(order.ClientId, "notFound")).SendAsync("FinishedOrder", order);
+
+        }
+
 
     }
 

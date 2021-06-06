@@ -21,8 +21,8 @@ namespace FoodDeliveryAPI.Models
             {
                 Email = "damon@gmail.com",
                 Password = "1234",
-                Name = "Lepirda",
-                Surname = "Damon"
+                LastName = "Lepirda",
+                FirstName = "Damon"
             };
 
             await context.Clients.AddAsync(client);
@@ -33,8 +33,8 @@ namespace FoodDeliveryAPI.Models
             {
                 Email = "gabi@gmail.com",
                 Password = "1234",
-                Name = "Lepirda",
-                Surname = "Gabriel"
+                LastName = "Lepirda",
+                FirstName = "Gabriel"
             };
             
             await context.Couriers.AddAsync(courier);
@@ -124,9 +124,22 @@ namespace FoodDeliveryAPI.Models
                     Name="Giant Bucket",
                     Price=80,
                     Description="bucket for 5 people",
-                    CategId=1
+                    CategId=3
                 },
-
+                new Item
+                {
+                    Name="Trio Bucket",
+                    Price=55,
+                    Description="bucket for 3 people with fries",
+                    CategId=3
+                },
+                  new Item
+                {
+                    Name="Duo Bucket",
+                    Price=45,
+                    Description="bucket for 2 people with small fries",
+                    CategId=3
+                },
                  new Item
                 {
                     Name="Booster",
@@ -139,7 +152,7 @@ namespace FoodDeliveryAPI.Models
                     Name="Pizza Domino's Special",
                     Description="tomato sauce, salami, cheese",
                     Price=32,
-                    CategId=3
+                    CategId=1
                 },
 
                   new Item
@@ -187,7 +200,7 @@ namespace FoodDeliveryAPI.Models
                   new Tag
                 {
                     TagId="fast food",
-                    Banner="https://i.imgur.com/h1SGcqq.jpg",
+                    Banner="https://i.imgur.com/kg4yPC0.jpg?1",
                     Description="Fast food for when you're in a hurry"
                 }
             };

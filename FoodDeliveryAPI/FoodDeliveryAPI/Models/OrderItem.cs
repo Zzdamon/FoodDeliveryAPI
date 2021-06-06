@@ -9,8 +9,14 @@ namespace FoodDeliveryAPI.Models
 {
     public class OrderItem
     {  // [Key]
+
         public int ItemId { get; set; }
-       // [Key]
+        //[ForeignKey("ItemId")]
+        public Item Item { get; set; }
+        [Required]
+        public int Quantity { get; set; }
         public int OrderId { get; set; }
+        //[ForeignKey("OrderId")]
+        //public Order Order { get; set; }
     }
 }

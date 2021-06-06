@@ -38,11 +38,11 @@ namespace FoodDeliveryAPI.Models
 
         [Required]
         [Column(TypeName = "nvarchar(50)")]
-        public string Name { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(50)")]
-        public string Surname { get; set; }
+        public string FirstName { get; set; }
 
         //[Column(TypeName = "nvarchar(100)")]
         //public string DefaultAddress { get; set; }

@@ -23,5 +23,7 @@ namespace FoodDeliveryAPI.Models
         public int CategId { get; set; }
         public Category Category { get; set; }
 
+        //public List<OrderItem> orderItems { get; set; }
+
     }
 }

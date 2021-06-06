@@ -30,7 +30,7 @@ namespace FoodDeliveryAPI.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<RestaurantTag>()
-        .HasKey(t => new { t.RestaurantId, t.TagId });
+                .HasKey(t => new { t.RestaurantId, t.TagId });
 
             builder.Entity<RestaurantTag>()
                 .HasOne(rt => rt.Restaurant)
@@ -43,18 +43,39 @@ namespace FoodDeliveryAPI.Models
                 .HasForeignKey(pt => pt.TagId);
 
             builder.Entity<Client>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
+                .HasIndex(u => u.Email)
+                .IsUnique();
 
 
             builder.Entity<Courier>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
+               .HasIndex(u => u.Email)
+                .IsUnique();
 
-            builder.Entity<OrderItem>().HasKey(table => new { table.ItemId, table.OrderId });
+            builder.Entity<OrderItem>()
+                .HasKey(table => new { table.OrderId, table.ItemId });
+
+            builder.Entity<OrderItem>()
+                .HasOne<Order>()
+                .WithMany(o => o.OrderItems)
+                .HasForeignKey(oi => oi.OrderId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Entity<OrderItem>()
+                    .HasOne(oi => oi.Item)
+                    .WithMany()
+                    .HasForeignKey(oi => oi.ItemId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+
+            //builder.Entity<OrderItem>()
+            //.HasOne(oi => oi.Item)
+            //.WithMany(i => i.)
+            //.HasForeignKey(oi => oi.OrderId);
+
         }
 
-   
+
 
     }
 }

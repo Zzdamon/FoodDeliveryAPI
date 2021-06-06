@@ -35,6 +35,11 @@ namespace FoodDeliveryAPI.Controllers
             foreach (var order in orders)
             {
                 order.Restaurant = await _context.Restaurants.FindAsync(order.RestaurantId);
+                order.OrderItems = await _context.OrderItems.Where(orderItem => orderItem.OrderId == order.OrderId).ToListAsync();
+                foreach (var orderItem in order.OrderItems)
+                {
+                    orderItem.Item = await _context.Items.FindAsync(orderItem.ItemId);
+                }
             }
             return orders;
         }
@@ -95,27 +100,33 @@ namespace FoodDeliveryAPI.Controllers
             _context.Orders.Add(orders);
             await _context.SaveChangesAsync();
 
+
             return CreatedAtAction("GetOrders", new { id = orders.OrderId }, orders);
         }
 
         //[HttpPost("fullOrder")]
-        //public async Task<ActionResult<Order>> PostOrders(Order order, List<OrderItem> items)
+        //public async Task<ActionResult<Order>> PostOrders(Order order, Item[] items)
         //{
         //    Order orderToReturn = _context.Orders.Add(order).Entity;
         //    await _context.SaveChangesAsync();
 
-
+        //    List<OrderItem> orderItems = new List<OrderItem>();
         //    foreach (var item in items)
         //    {
-        //        item.orderId = orderToReturn.orderId;
+        //        OrderItem orderItem = new OrderItem();
+        //        orderItem.ItemId = item.ItemId;
+        //        orderItem.OrderId = order.OrderId;
+        //        orderItem.Item = item;
+        //        //item.orderId = orderToReturn.orderId;
+        //        orderItems.Add(orderItem);
         //        //_context.OrderItems.Add(item);
         //    }
-
-        //    _context.OrderItems.AddRange(items);
+        //    order.OrderItems = orderItems;
+        //    _context.OrderItems.AddRange(orderItems);
 
         //    await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetOrders", new { id = order.orderId }, order);
+        //    return order;
         //}
 
 
@@ -126,17 +137,17 @@ namespace FoodDeliveryAPI.Controllers
         //    var orderItems = new OrderItem[items.Length];
 
 
-        //    for(int i=0;i<items.Length;i++)
-        //    {
-        //        orderItems[i].itemId = items[i].itemId;
-        //        orderItems[i].orderId = order.orderId;
-        //    }
+        //    //for (int i = 0; i < items.Length; i++)
+        //    //{
+        //    //    orderItems[i].itemId = items[i].itemId;
+        //    //    orderItems[i].orderId = order.orderId;
+        //    //}
 
 
         //    _context.OrderItems.AddRange(orderItems);
         //    await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetOrders", new { id = order.orderId }, order);
+        //    return CreatedAtAction("GetOrders", new { id = order.OrderId }, order);
         //}
 
         // DELETE: api/Orders/5
