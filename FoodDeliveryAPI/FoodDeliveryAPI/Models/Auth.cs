@@ -17,6 +17,7 @@ namespace FoodDeliveryAPI.Models
 
         [Required]
         [Column(TypeName = "nvarchar(200)")]
+        [MinLength(5)]
         private string password;
 
     }

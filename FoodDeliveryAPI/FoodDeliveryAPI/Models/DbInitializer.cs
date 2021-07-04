@@ -20,7 +20,7 @@ namespace FoodDeliveryAPI.Models
             var client = new Client
             {
                 Email = "damon@gmail.com",
-                Password = "1234",
+                Password = "123456",
                 LastName = "Lepirda",
                 FirstName = "Damon"
             };
@@ -32,7 +32,7 @@ namespace FoodDeliveryAPI.Models
             var courier = new Courier
             {
                 Email = "gabi@gmail.com",
-                Password = "1234",
+                Password = "123456",
                 LastName = "Lepirda",
                 FirstName = "Gabriel"
             };
@@ -45,14 +45,14 @@ namespace FoodDeliveryAPI.Models
             {
                 new Restaurant{Name="KFC", MinOrder=25,Logo="https://i.imgur.com/DWJWbwa.png",
                     Address="Bulevardul Alexandru Lăpușneanu 116C, Constanța 900419",
-                    Description="fast food",
+                    Description="Kentucky Fried Chicken, following the colonel's classic recipe",
                     RestaurantLat= 44.20326811524546 ,
                     RestaurantLng=28.630486542562647
                     },
 
                  new Restaurant{Name="McDonald's", MinOrder=20,Logo="https://i.imgur.com/Lk9Fexu.png",
                     Address="Bulevardul Mamaia 255, Constanța 300417",
-                    Description="fast food",
+                    Description="That's so good!",
                      RestaurantLat= 44.20578790563886,
                     RestaurantLng=28.64278571187222
 
@@ -60,7 +60,7 @@ namespace FoodDeliveryAPI.Models
 
                   new Restaurant{Name="Domino's Pizza", MinOrder=20,Logo="https://i.imgur.com/AEixqGw.png",
                     Address="Strada Ion Luca Caragiale nr. 4, Constanța 900211",
-                    Description="pizza",
+                    Description="Best pizza in town!",
                     RestaurantLat= 44.17645560439799,
                     RestaurantLng=28.62225421187142
 
@@ -187,21 +187,27 @@ namespace FoodDeliveryAPI.Models
             var tags = new Tag[]
             {
                 new Tag
-                {   TagId="pizza",
+                {   TagId="Pizza",
                     Banner="https://i.imgur.com/7hm6AZ6.png",
                     Description="Best pizza made by italian chefs"
                 },
                 new Tag
                 {
-                    TagId="burgers",
+                    TagId="Burgers",
                     Banner="https://i.imgur.com/LhG3CIk.jpg",
                     Description="Best american burgers"
                 },
                   new Tag
                 {
-                    TagId="fast food",
+                    TagId="Fast Food",
                     Banner="https://i.imgur.com/kg4yPC0.jpg?1",
                     Description="Fast food for when you're in a hurry"
+                },
+                     new Tag
+                {
+                    TagId="Pasta",
+                    Banner="https://i.imgur.com/5XVD7Sg.jpg?1",
+                    Description="Great pasta to lighten your day"
                 }
             };
             foreach (Tag s in tags)
@@ -216,23 +222,28 @@ namespace FoodDeliveryAPI.Models
                new RestaurantTag
                {
                    RestaurantId=1,
-                   TagId="burgers"
+                   TagId="Burgers"
                },
              new RestaurantTag
                {
                    RestaurantId=2,
-                   TagId="burgers"
+                   TagId="Burgers"
                },
              new RestaurantTag
                {
                    RestaurantId=2,
-                   TagId="fast food"
+                   TagId="Fast Food"
                },
              new RestaurantTag
                {
                    RestaurantId=3,
-                   TagId="pizza"
+                   TagId="Pizza"
                },
+             new RestaurantTag
+               {
+                   RestaurantId=3,
+                   TagId="Pasta"
+               }
              };
             foreach (RestaurantTag s in restTags)
             {
